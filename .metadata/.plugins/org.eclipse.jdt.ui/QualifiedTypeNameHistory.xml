@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="simplepdl.SimplepdlPackage"/>
+    <fullyQualifiedTypeName name="petrinet.Petri"/>
+    <fullyQualifiedTypeName name="simplepdl.ProcessElement"/>
+    <fullyQualifiedTypeName name="simplepdl.WorkDefinition"/>
+    <fullyQualifiedTypeName name="petrinet.Place"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.LinkedList"/>
+    <fullyQualifiedTypeName name="petrinet.PetriElement"/>
+    <fullyQualifiedTypeName name="simplepdl.WorkSequence"/>
+    <fullyQualifiedTypeName name="petrinet.Transition"/>
+    <fullyQualifiedTypeName name="petrinet.Link"/>
+    <fullyQualifiedTypeName name="simplepdl.WorkSequenceType"/>
+    <fullyQualifiedTypeName name="simplepdl.Ressource"/>
+    <fullyQualifiedTypeName name="simplepdl.RessourceNeeded"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

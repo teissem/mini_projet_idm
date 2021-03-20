@@ -1,0 +1,244 @@
+package simplepdl.manip;
+
+import java.io.IOException;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+import petrinet.Link;
+import petrinet.Petri;
+import petrinet.PetriElement;
+import petrinet.PetrinetFactory;
+import petrinet.Place;
+import petrinet.Transition;
+import simplepdl.Process;
+import simplepdl.ProcessElement;
+import simplepdl.Ressource;
+import simplepdl.RessourceNeeded;
+import simplepdl.SimplepdlFactory;
+import simplepdl.SimplepdlPackage;
+import simplepdl.WorkDefinition;
+import simplepdl.WorkSequence;
+
+public class SimplePDL2PetriNet {
+	public static void main (String[] args) {
+		final String TARGET = "models/SimplePDLCreator_Created_Process.xmi";
+		
+		// Charger le package SimplePDL afin de l'enregistrer dans le registre d'Eclipse.
+		SimplepdlPackage packageInstance = SimplepdlPackage.eINSTANCE;
+		
+		// Enregistrer l'extension ".xmi" comme devant être ouverte Ã 
+		// l'aide d'un objet "XMIResourceFactoryImpl"
+		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
+		Map<String, Object> m = reg.getExtensionToFactoryMap();
+		m.put("xmi", new XMIResourceFactoryImpl());
+		
+		// Créer un objet resourceSetImpl qui contiendra une ressource EMF (le modèle)
+		ResourceSet resSet = new ResourceSetImpl();
+
+		// Définir la ressource (le modèle)
+		URI modelURIPetri = URI.createURI("models/SimplePDL2PetriNet_Generated.xmi");
+		Resource resourcePetri = resSet.createResource(modelURIPetri);
+		
+		// Charger la ressource (notre modèle)
+		URI modelURIPDL = URI.createURI("models/SimplePDLCreator_Created_Process.xmi");
+		Resource resourcePDL = resSet.getResource(modelURIPDL, true);
+		
+		// La fabrique pour fabriquer les éléments de SimplePDL
+	    PetrinetFactory myFactory = PetrinetFactory.eINSTANCE;
+	    
+	    // Conversion de l'objet Process en objet Petri
+	    Process process = (Process) resourcePDL.getContents().get(0);
+	    Petri petri = myFactory.createPetri();
+	    petri.setName(process.getName());
+	    resourcePetri.getContents().add(petri);
+	    
+	    List<Place> lpl = new LinkedList<Place>();
+	    List<Transition> ltr = new LinkedList<Transition>();
+	    List<Link> lli = new LinkedList<Link>();
+	    List<Ressource> lre = new LinkedList<Ressource>();
+	    // Conversion des objets ProcessElement en objet PetriElement
+	    for (ProcessElement pe : process.getProcessElements()) {
+	    	// Conversion des objets WorkDefinition en objets Place
+	    	if (pe instanceof WorkDefinition) {
+	    		WorkDefinition wd = (WorkDefinition) pe;
+    			// Creation WorkDefinition representation
+    			Place plBegin = myFactory.createPlace();
+    			Transition trStart = myFactory.createTransition();
+    			Place plIdle = myFactory.createPlace();
+    			Transition trFinish = myFactory.createTransition();
+    			Place plEnd = myFactory.createPlace();
+    			Link beginToStart = myFactory.createLink();
+    			Link startToIdle = myFactory.createLink();
+    			Link idleToFinish = myFactory.createLink();
+    			Link finishToEnd = myFactory.createLink();
+    			// Set name
+	    		plBegin.setName(wd.getName() + "Begin");
+	    		trStart.setName(wd.getName() + "Start");
+	    		plIdle.setName(wd.getName() + "Idle");
+	    		trFinish.setName(wd.getName() + "Finish");
+	    		plEnd.setName(wd.getName() + "End");
+	    		// Weight of links
+	    		if (wd.getLinksToPredecessors().size() == 0) {
+	    			plBegin.setWeight(1);
+	    		}
+	    		else {
+	    			plBegin.setWeight(0);
+	    		}
+	    		plIdle.setWeight(0);
+	    		plEnd.setWeight(0);
+	    		// Link Initialisation
+	    		beginToStart.setPlace(plBegin);
+	    		beginToStart.setTransition(trStart);
+	    		beginToStart.setPositive(false);
+	    		beginToStart.setWeight(1);
+	    		startToIdle.setPlace(plIdle);
+	    		startToIdle.setTransition(trStart);
+	    		startToIdle.setPositive(true);
+	    		startToIdle.setWeight(1);
+	    		idleToFinish.setPlace(plIdle);
+	    		idleToFinish.setTransition(trFinish);
+	    		idleToFinish.setPositive(false);
+	    		idleToFinish.setWeight(1);
+	    		finishToEnd.setPlace(plEnd);
+	    		finishToEnd.setTransition(trFinish);
+	    		finishToEnd.setPositive(true);
+	    		finishToEnd.setWeight(1);
+	    		// Add element to lists
+	    		lpl.add(plBegin);
+	    		lli.add(beginToStart);
+	    		ltr.add(trStart);
+	    		lli.add(startToIdle);
+	    		lpl.add(plIdle);
+	    		lli.add(idleToFinish);
+	    		ltr.add(trFinish);
+	    		lli.add(finishToEnd);
+	    		lpl.add(plEnd);
+	    	}
+	    }
+	    for (ProcessElement pe : process.getProcessElements()) {
+	    	if (pe instanceof WorkSequence) {
+	    		WorkSequence ws = (WorkSequence) pe;
+	    		WorkDefinition pred = ws.getPredecessor();
+    			WorkDefinition succ = ws.getSuccessor();
+	    		Transition tr = null;
+	    		Place pl = null;
+    			switch(ws.getLinkType().getValue()) {
+	    		case simplepdl.WorkSequenceType.START_TO_START_VALUE:
+	    			for(Transition t : ltr) {
+	    				if(t.getName().equals(pred.getName() + "Start")) {
+	    					tr = t;
+	    				}
+	    			}
+	    			for(Place p : lpl) {
+	    				if(p.getName().equals(succ.getName() + "Begin")) {
+	    					pl = p;
+	    				}
+	    			}
+	    			for (Link l : lli) {
+	    				if(l.getPlace().getName().equals(succ.getName() + "Begin") && 
+    					   l.getTransition().getName().equals(succ.getName() + "Start")) {
+	    					l.setWeight(l.getWeight()+1);
+	    				}
+	    			}
+	    			break;
+	    		case simplepdl.WorkSequenceType.START_TO_FINISH_VALUE:
+	    			for(Transition t : ltr) {
+	    				if(t.getName().equals(pred.getName() + "Start")) {
+	    					tr = t;
+	    				}
+	    			}
+	    			for(Place p : lpl) {
+	    				if(p.getName().equals(succ.getName() + "Idle")) {
+	    					pl = p;
+	    				}
+	    			}
+	    			for (Link l : lli) {
+	    				if(l.getPlace().getName().equals(succ.getName() + "Idle") && 
+    					   l.getTransition().getName().equals(succ.getName() + "Finish")) {
+	    					l.setWeight(l.getWeight()+1);
+	    				}
+	    			}
+	    			break;
+	    		case simplepdl.WorkSequenceType.FINISH_TO_START_VALUE:
+	    			for(Transition t : ltr) {
+	    				if(t.getName().equals(pred.getName() + "Finish")) {
+	    					tr = t;
+	    				}
+	    			}
+	    			for(Place p : lpl) {
+	    				if(p.getName().equals(succ.getName() + "Begin")) {
+	    					pl = p;
+	    				}
+	    			}
+	    			for (Link l : lli) {
+	    				if(l.getPlace().getName().equals(succ.getName() + "Begin") && 
+    					   l.getTransition().getName().equals(succ.getName() + "Start")) {
+	    					l.setWeight(l.getWeight()+1);
+	    				}
+	    			}
+	    			break;
+	    		case simplepdl.WorkSequenceType.FINISH_TO_FINISH_VALUE:
+	    			for(Transition t : ltr) {
+	    				if(t.getName().equals(pred.getName() + "Finish")) {
+	    					tr = t;
+	    				}
+	    			}
+	    			for(Place p : lpl) {
+	    				if(p.getName().equals(succ.getName() + "Idle")) {
+	    					pl = p;
+	    				}
+	    			}
+	    			for (Link l : lli) {
+	    				if(l.getPlace().getName().equals(succ.getName() + "Idle") && 
+    					   l.getTransition().getName().equals(succ.getName() + "Finish")) {
+	    					l.setWeight(l.getWeight()+1);
+	    				}
+	    			}
+	    			break;
+	    		}
+    			Link link = myFactory.createLink();
+    			link.setPlace(pl);
+    			link.setTransition(tr);
+    			link.setWeight(1);
+    			link.setPositive(true);
+    			lli.add(link);
+	    	}
+	    	else if (pe instanceof RessourceNeeded) {
+	    		RessourceNeeded rn = (RessourceNeeded) pe;
+	    		// Creation of a link
+	    		Ressource r = null;
+	    		for(Ressource tmp : lre) {
+	    			if (rn.getRessource().getName().equals(tmp.getName())) {
+	    				r = tmp;
+	    			}
+	    		}
+	    		Link takeRessource = myFactory.createLink();
+	    		Link giveRessource = myFactory.createLink();
+	    		
+	    	}
+	    }
+	    for (Place p : lpl) {
+	    	petri.getPetriElements().add(p);
+	    }
+	    for (Transition t : ltr) {
+	    	petri.getPetriElements().add(t);
+	    }
+	    for (Link l : lli) {
+	    	petri.getPetriElements().add(l);
+	    }
+	    // Sauver la ressource
+	    try {
+	    	resourcePetri.save(Collections.EMPTY_MAP);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<petrinnet:Petri xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:petrinnet="http://petrinet" name="Mon premier processus">
+  <petriElements xsi:type="petrinnet:Place" name="Ma premi&#xe8;re WorkDefinition, quelle &#xe9;motionBegin" weight="1"/>
+  <petriElements xsi:type="petrinnet:Place" name="Ma premi&#xe8;re WorkDefinition, quelle &#xe9;motionIdle"/>
+  <petriElements xsi:type="petrinnet:Place" name="Ma premi&#xe8;re WorkDefinition, quelle &#xe9;motionEnd"/>
+  <petriElements xsi:type="petrinnet:Place" name="Ma deuxi&#xe8;me WorkDefinition, toujours autant d'&#xe9;motionBegin"/>
+  <petriElements xsi:type="petrinnet:Place" name="Ma deuxi&#xe8;me WorkDefinition, toujours autant d'&#xe9;motionIdle"/>
+  <petriElements xsi:type="petrinnet:Place" name="Ma deuxi&#xe8;me WorkDefinition, toujours autant d'&#xe9;motionEnd"/>
+  <petriElements xsi:type="petrinnet:Transition" name="Ma premi&#xe8;re WorkDefinition, quelle &#xe9;motionStart"/>
+  <petriElements xsi:type="petrinnet:Transition" name="Ma premi&#xe8;re WorkDefinition, quelle &#xe9;motionFinish"/>
+  <petriElements xsi:type="petrinnet:Transition" name="Ma deuxi&#xe8;me WorkDefinition, toujours autant d'&#xe9;motionStart"/>
+  <petriElements xsi:type="petrinnet:Transition" name="Ma deuxi&#xe8;me WorkDefinition, toujours autant d'&#xe9;motionFinish"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1" positive="true"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1" positive="true"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1" positive="true"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1"/>
+  <petriElements xsi:type="petrinnet:Link" weight="1" positive="true"/>
+</petrinnet:Petri>

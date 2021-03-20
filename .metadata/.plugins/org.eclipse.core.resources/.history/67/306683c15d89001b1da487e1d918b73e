@@ -1,0 +1,32 @@
+import 'SimplePDL.ecore'
+
+package simplepdl
+
+context Process
+inv warningSeverity: false
+inv withMessage('Explicit message in process ' + self.name + ' (withMessage)'): false
+-- inv errorSeverity: null
+
+context Process
+--Deux activités d'un même processus ne peuvent pas avoir le même nom
+inv notSameName('Deux activités d\'un meme processus ne peuvent pas avoir le meme nom'): 
+	self.processElements
+		->select(pe | pe.oclIsKindOf(WorkDefinition))
+		->collect(pe | pe.oclAsType(WorkDefinition))
+		->forAll(p1, p2 | p1 <> p2 implies p1.name <> p2.name)
+
+context WorkDefinition
+--Le nom d'une activité doit être composé d'au moins deux caractères
+inv twoCharacters ('Le nom d\'une activite doit etre compose d\'au moins deux caracteres'):
+	self.name.length() >= 2
+	
+-- Le nom d'une activité ne doit être composé que de lettres, chiffres ou soulignés, un chiffre ne peut pas être première position
+inv isValidName ('Invalid Name'):
+	self.name.matches([A-Za-z_][A-Za-z0-9_]+)
+	
+context WorkSequence
+-- Une dépendance ne peut pas être réflexive
+inv notReflexiveDependencies ('Une dépendance ne peut pas être réflexive'):
+	self.predecessor <> self.successor
+
+endpackage

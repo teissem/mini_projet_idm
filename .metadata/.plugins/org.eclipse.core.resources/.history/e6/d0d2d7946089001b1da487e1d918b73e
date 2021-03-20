@@ -1,0 +1,9 @@
+import 'PetriNet.ecore'
+
+package petrinet
+
+context petrinet
+inv validName('Invalid name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+endpackage

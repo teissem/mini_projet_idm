@@ -1,0 +1,9 @@
+import 'SimplePDL.ecore'
+
+package simplepdl
+
+context Ressource
+inv twoCharRessources():
+	self.name.length() >= 2
+
+endpackage

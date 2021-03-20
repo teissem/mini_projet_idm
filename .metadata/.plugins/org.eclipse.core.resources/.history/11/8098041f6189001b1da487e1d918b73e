@@ -1,0 +1,21 @@
+import 'PetriNet.ecore'
+
+package petrinet
+
+context Petri
+inv validName('Invalid name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+context Place
+inv validNamePlace('Invalid Place name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+context Transition
+inv validNameTransition('Invalid Transition name: ' + self.name):
+	self.name.matches('[A-Za-z_][A-Za-z0-9_]*')
+
+context Link
+inv positiveLink('A link weight have to be positive : ' + self.weight):
+	self.weight >= 0
+
+endpackage

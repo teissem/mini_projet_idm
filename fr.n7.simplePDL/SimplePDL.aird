@@ -4,7 +4,7 @@
     <semanticResources>SimplePDL.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_z8H6gIfsEeuhtes3-UYueg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_2TYs0IfsEeuhtes3-UYueg" name="simplepdl class diagram" repPath="#_2SzeAIfsEeuhtes3-UYueg" changeId="a710f64a-83b0-49d0-ad2b-a90003d8a4d0">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_2TYs0IfsEeuhtes3-UYueg" name="simplepdl class diagram" repPath="#_2SzeAIfsEeuhtes3-UYueg" changeId="e033d8e5-a03c-48f6-9272-93f936529017">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="SimplePDL.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -444,9 +444,9 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_J6WacIfvEeuhtes3-UYueg" name="[0..*] elements" sourceNode="_cEo2EIfuEeuhtes3-UYueg" targetNode="_V0UukIfuEeuhtes3-UYueg">
-      <target xmi:type="ecore:EReference" href="SimplePDL.ecore#//Guidance/elements"/>
-      <semanticElements xmi:type="ecore:EReference" href="SimplePDL.ecore#//Guidance/elements"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_J6WacIfvEeuhtes3-UYueg" name="[0..*] guidances" sourceNode="_cEo2EIfuEeuhtes3-UYueg" targetNode="_V0UukIfuEeuhtes3-UYueg">
+      <target xmi:type="ecore:EReference" href="SimplePDL.ecore#//Guidance/guidances"/>
+      <semanticElements xmi:type="ecore:EReference" href="SimplePDL.ecore#//Guidance/guidances"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_J6XBgIfvEeuhtes3-UYueg" routingStyle="manhattan" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_J6XBgofvEeuhtes3-UYueg" showIcon="false">
@@ -494,9 +494,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xpg3UIfvEeuhtes3-UYueg" name="[0..*] processelement" sourceNode="_3VXuQIfsEeuhtes3-UYueg" targetNode="_V0UukIfuEeuhtes3-UYueg">
-      <target xmi:type="ecore:EReference" href="SimplePDL.ecore#//Process/processelement"/>
-      <semanticElements xmi:type="ecore:EReference" href="SimplePDL.ecore#//Process/processelement"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_xpg3UIfvEeuhtes3-UYueg" name="[0..*] processElements" sourceNode="_3VXuQIfsEeuhtes3-UYueg" targetNode="_V0UukIfuEeuhtes3-UYueg">
+      <target xmi:type="ecore:EReference" href="SimplePDL.ecore#//Process/processElements"/>
+      <semanticElements xmi:type="ecore:EReference" href="SimplePDL.ecore#//Process/processElements"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_xpg3VIfvEeuhtes3-UYueg" description="_xpg3UYfvEeuhtes3-UYueg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_xpg3VofvEeuhtes3-UYueg" showIcon="false">
           <customFeatures>labelSize</customFeatures>
@@ -546,9 +546,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC%20ESupertypes']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Iw7paYfxEeuhtes3-UYueg" name="[0..*] processelement" sourceNode="_B2HBwIfwEeuhtes3-UYueg" targetNode="_V0UukIfuEeuhtes3-UYueg">
-      <target xmi:type="ecore:EReference" href="SimplePDL.ecore#//Ressource/processelement"/>
-      <semanticElements xmi:type="ecore:EReference" href="SimplePDL.ecore#//Ressource/processelement"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_Iw7paYfxEeuhtes3-UYueg" name="[0..*] ressources" sourceNode="_B2HBwIfwEeuhtes3-UYueg" targetNode="_V0UukIfuEeuhtes3-UYueg">
+      <target xmi:type="ecore:EReference" href="SimplePDL.ecore#//Ressource/ressources"/>
+      <semanticElements xmi:type="ecore:EReference" href="SimplePDL.ecore#//Ressource/ressources"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_Iw7paofxEeuhtes3-UYueg" description="_xpg3UYfvEeuhtes3-UYueg" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_Iw7pbIfxEeuhtes3-UYueg" showIcon="false">
           <customFeatures>labelSize</customFeatures>

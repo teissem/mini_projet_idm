@@ -1,0 +1,19 @@
+digraph Global {
+
+	subgraph place {
+		graph [shape=circle,color=gray];
+		node [shape=circle,fixedsize=true,width=1];
+		"p1";
+		"p2";
+		"p3";
+	}
+
+	subgraph place {
+		node [shape=rect, height=0.2, width=1];
+		"t1";
+	}
+
+	p1 -> t1 [arrowhead=vee label=1]
+	p2 -> t1 [arrowhead=vee label=1]
+	t1 -> p3 [arrowhead=vee label=1]
+}

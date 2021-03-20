@@ -8,18 +8,16 @@
   <genPackages prefix="Petrinet" disposableProviderFactory="true" ecorePackage="PetriNet.ecore#/">
     <genClasses ecoreClass="PetriNet.ecore#//Place">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Place/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Place/possibilities"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Place/weight"/>
     </genClasses>
     <genClasses ecoreClass="PetriNet.ecore#//Transition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Transition/links"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Transition/name"/>
     </genClasses>
     <genClasses ecoreClass="PetriNet.ecore#//Link">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Link/weight"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute PetriNet.ecore#//Link/positive"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Link/transition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Link/place"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Link/transition"/>
     </genClasses>
     <genClasses ecoreClass="PetriNet.ecore#//Petri">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference PetriNet.ecore#//Petri/petriElements"/>

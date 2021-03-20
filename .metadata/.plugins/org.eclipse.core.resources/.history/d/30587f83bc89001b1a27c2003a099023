@@ -1,0 +1,52 @@
+[comment encoding = UTF-8 /]
+[module petriToDot('http://petrinet')]
+
+
+[template public processToDot(aPetri : Petri)]
+[comment @main/]
+[file (aPetri.name + '.dot', false, 'UTF-8')]
+digraph [aPetri.name/] {
+
+	subgraph place {
+		graph ['['/]shape=circle,color=gray[']'/];
+		node ['['/]shape=circle,fixedsize=true,width=1[']'/];
+		[for (pl : Place | aPetri.getPlaces())]
+		"[pl.name/]";
+		[/for]	
+	}
+
+	subgraph place {
+		graph ['['/]shape=rect,color=gray[']'/];
+		[for (tr : Transition | aPetri.getTransitions())]
+		"[tr.name/]";
+		[/for]	
+	}
+
+	[for (li : Link | aPetri.getLinks())]
+    [if (li.positive)]
+	[li.transition.name/] -> [li.place.name/] ['['/]arrowhead=vee label=[li.weight/][']'/]
+	[else]
+	[li.place.name/] -> [li.transition.name/] ['['/]arrowhead=vee label=[li.weight/][']'/]
+	[/if] 
+	[/for]
+}
+[/file]
+[/template]
+
+[query public getLinks(p: Petri) : OrderedSet(Link) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Link) )
+		->collect( e | e.oclAsType(Link) )
+		->asOrderedSet()
+/]
+
+[query public getPlaces(p: Petri) : OrderedSet(Place) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Place) )
+		->collect( e | e.oclAsType(Place) )
+		->asOrderedSet()
+/]
+
+[query public getTransitions(p: Petri) : OrderedSet(Transition) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Transition) )
+		->collect( e | e.oclAsType(Transition) )
+		->asOrderedSet()
+/]

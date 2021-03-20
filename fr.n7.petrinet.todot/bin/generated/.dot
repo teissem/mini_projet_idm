@@ -1,0 +1,5 @@
+digraph  {
+	p1 -> t1 [arrowhead=vee label=1]
+	p2 -> t1 [arrowhead=vee label=1]
+	t1 -> p3 [arrowhead=vee label=1]
+}

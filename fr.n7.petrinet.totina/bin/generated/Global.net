@@ -1,0 +1,5 @@
+net Global
+pl p1 (1)
+pl p2 (1)
+pl p3 (0)
+tr t1 p1*1 p2*1  -> p3*1 

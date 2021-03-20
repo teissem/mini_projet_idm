@@ -1,0 +1,3 @@
+digraph ExampleProcess {
+    FirstTask -> SecondTask [arrowhead=vee label=f2f]
+}

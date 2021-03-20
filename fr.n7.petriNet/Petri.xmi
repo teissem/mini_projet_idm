@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<petrinnet:Petri
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:petrinnet="http://petrinet"
+    xsi:schemaLocation="http://petrinet PetriNet.ecore"
+    name="Global">
+  <petriElements
+      xsi:type="petrinnet:Place"
+      name="p1"
+      weight="1"/>
+  <petriElements
+      xsi:type="petrinnet:Place"
+      name="p2"
+      weight="1"/>
+  <petriElements
+      xsi:type="petrinnet:Place"
+      name="p3"/>
+  <petriElements
+      xsi:type="petrinnet:Transition"
+      name="t1"/>
+  <petriElements
+      xsi:type="petrinnet:Link"
+      weight="1"
+      place="//@petriElements.0"
+      transition="//@petriElements.3"/>
+  <petriElements
+      xsi:type="petrinnet:Link"
+      weight="1"
+      place="//@petriElements.1"
+      transition="//@petriElements.3"/>
+  <petriElements
+      xsi:type="petrinnet:Link"
+      weight="1"
+      positive="true"
+      place="//@petriElements.2"
+      transition="//@petriElements.3"/>
+</petrinnet:Petri>

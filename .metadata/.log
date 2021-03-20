@@ -1991,3 +1991,22 @@ java.lang.InterruptedException
 	at org.eclipse.osgi.container.SystemModule.stop(SystemModule.java:207)
 	at org.eclipse.osgi.internal.framework.EquinoxBundle$SystemBundle$EquinoxSystemModule$1.run(EquinoxBundle.java:220)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+!SESSION 2021-03-20 18:50:56.174 -----------------------------------------------
+eclipse.buildId=4.17.0.I20200902-1800
+java.version=11.0.10
+java.vendor=Ubuntu
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.modeling.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.modeling.product
+
+!ENTRY org.eclipse.jdt.core 4 969 2021-03-20 20:18:49.406
+!MESSAGE fr.n7.simplepdl.toHTML does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2021-03-20 20:18:49.407
+!MESSAGE fr.n7.simplepdl.toHTML does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2021-03-20 20:18:49.408
+!MESSAGE fr.n7.simplepdl.toHTML does not exist
+
+!ENTRY org.eclipse.jdt.core 4 969 2021-03-20 20:18:49.408
+!MESSAGE fr.n7.simplepdl.toHTML does not exist

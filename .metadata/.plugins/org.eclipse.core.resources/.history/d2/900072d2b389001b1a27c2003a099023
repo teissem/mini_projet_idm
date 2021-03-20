@@ -1,0 +1,16 @@
+[comment encoding = UTF-8 /]
+[module toDot('http://simplepdl')]
+
+
+[template public processToDot(aProcess : Process)]
+[comment @main/]
+[file (aProcess.name, false, 'UTF-8')]
+digraph [aProcess.name/] {
+	[query public getWDs(p: Process) : OrderedSet(WorkDefinition) = 
+	p.processElements->select( e | e.oclIsTypeOf(WorkDefinition) )
+		->collect( e | e.oclAsType(WorkDefinition) )
+		->asOrderedSet()
+/]
+}
+[/file]
+[/template]

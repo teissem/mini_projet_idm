@@ -1,0 +1,39 @@
+[comment encoding = UTF-8 /]
+[module toTina('http://petrinet')]
+
+
+[template public petriToTina(aPetri : Petri)]
+[comment @main/]
+[file (aPetri.name + '.net', false, 'UTF-8')]
+net [aPetri.name/]
+[for(pl : Place | aPetri.getPlaces())]
+pl [pl.name/] ([pl.weight/])
+[/for]
+[for(tr : Transition | aPetri.getTransitions())]
+tr [tr.name/] 
+[/for]
+[/file]
+[/template]
+
+[query public getLinks(p: Petri) : OrderedSet(Link) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Link) )
+		->collect( e | e.oclAsType(Link) )
+		->asOrderedSet()
+/]
+
+[query public getPlaces(p: Petri) : OrderedSet(Place) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Place) )
+		->collect( e | e.oclAsType(Place) )
+		->asOrderedSet()
+/]
+
+[query public getTransitions(p: Petri) : OrderedSet(Transition) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Transition) )
+		->collect( e | e.oclAsType(Transition) )
+		->asOrderedSet()
+/]
+
+[query public getPredecessor(t : Transition, p : Petri) : OrderedSet(Place) = 
+	general = p.getPlaces()
+	
+/]

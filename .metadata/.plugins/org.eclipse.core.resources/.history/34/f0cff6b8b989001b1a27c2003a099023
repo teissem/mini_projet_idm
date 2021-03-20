@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[module toDot('http://petrinet')]
+
+
+[template public processToDot(aPetri : Petri)]
+[comment @main/]
+[file (aPetri.name + '.dot', false, 'UTF-8')]
+digraph [aPetri.name/] {
+	[for (li : Link | aPetri.getLinks())]
+    [if ]
+	[else]
+	[if/] -> [ws.successor.name/] ['['/]arrowhead=vee label=[ws.toState()/][']'/]
+	[/for]
+}
+[/file]
+[/template]
+
+[query public getLinks(p: Petri) : OrderedSet(Link) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Link) )
+		->collect( e | e.oclAsType(Link) )
+		->asOrderedSet()
+/]

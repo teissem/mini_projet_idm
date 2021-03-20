@@ -1,0 +1,30 @@
+[comment encoding = UTF-8 /]
+[module petriToDot('http://petrinet')]
+
+
+[template public processToDot(aPetri : Petri)]
+[comment @main/]
+[file (aPetri.name + '.dot', false, 'UTF-8')]
+digraph [aPetri.name/] {
+
+	subgraph place {
+		graph ['['/]shape=circle,color=gray[']'/];
+		node ['['/]shape=circle,fixedsize=true,width=2[']'/];
+	}
+
+	[for (li : Link | aPetri.getLinks())]
+    [if (li.positive)]
+	[li.transition.name/] -> [li.place.name/] ['['/]arrowhead=vee label=[li.weight/][']'/]
+	[else]
+	[li.place.name/] -> [li.transition.name/] ['['/]arrowhead=vee label=[li.weight/][']'/]
+	[/if] 
+	[/for]
+}
+[/file]
+[/template]
+
+[query public getLinks(p: Petri) : OrderedSet(Link) = 
+	p.petriElements->select( e | e.oclIsTypeOf(Link) )
+		->collect( e | e.oclAsType(Link) )
+		->asOrderedSet()
+/]

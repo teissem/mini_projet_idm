@@ -1,0 +1,38 @@
+process exemple{
+	wd Conception {}
+	wd Programmation {
+		starts if Conception finished
+	}
+	wd RedactionTests { 
+		starts if Conception started
+		finishes if Programmation finished		
+	}
+	wd RedactionDoc {
+		starts if Conception started
+		finishes if Conception finished
+	}
+	note "Ma note"
+	re Concepteur {
+		Quantity 3
+		Conception need 2 to start
+	}
+	re Developpeur {
+		Quantity 2
+		Programmation need 2 to start
+	}
+	re Machine {
+		Quantity 4
+		Conception need 2 to start
+		RedactionDoc need 1 to start
+		Programmation need 3 to start
+		RedactionTest need 2 to start
+	}
+	re Redacteur {
+		Quantity 1
+		RedactionDoc need 1 to start
+	}
+	re Testeur {
+		Quantity 2
+		RedactionTest need 1 to start
+	}
+}

@@ -26,7 +26,7 @@
 	</section>
 	<section name="InstallationDialogSettings">
 		<item key="DIALOG_X_ORIGIN" value="-78"/>
-		<item key="DIALOG_Y_ORIGIN" value="-124"/>
+		<item key="DIALOG_Y_ORIGIN" value="-62"/>
 		<item key="DIALOG_WIDTH" value="692"/>
 		<item key="DIALOG_HEIGHT" value="785"/>
 		<item key="DIALOG_FONT_NAME" value="1|Noto Sans|9.0|0|GTK|1|"/>
@@ -37,5 +37,7 @@
 		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
 			<item value="/home/n7student/Téléchargements"/>
 		</list>
+	</section>
+	<section name="EditorSelectionDialog">
 	</section>
 </section>

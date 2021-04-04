@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/fr.n7.eclipse.feature.exemple_1.0.0.202103201314.jar" id="fr.n7.eclipse.feature.exemple" version="1.0.0.202103201314">
+   <feature url="features/fr.n7.eclipse.feature.exemple_1.0.0.202103211520.jar" id="fr.n7.eclipse.feature.exemple" version="1.0.0.202103211520">
       <category name="N7 exemple"/>
    </feature>
-   <feature url="features/fr.n7.eclipse.feature.arborescent_1.0.0.202103201314.jar" id="fr.n7.eclipse.feature.arborescent" version="1.0.0.202103201314">
+   <feature url="features/fr.n7.eclipse.feature.arborescent_1.0.0.202103211520.jar" id="fr.n7.eclipse.feature.arborescent" version="1.0.0.202103211520">
       <category name="N7 GLS Feature"/>
+   </feature>
+   <feature url="features/fr.n7.eclipse.feature.xtextpdl_1.0.0.202103211520.jar" id="fr.n7.eclipse.feature.xtextpdl" version="1.0.0.202103211520">
+      <category name="N7 Xtext PDL1"/>
+   </feature>
+   <feature url="features/fr.n7.eclipse.feature.xtextpdl2_1.0.0.202103211520.jar" id="fr.n7.eclipse.feature.xtextpdl2" version="1.0.0.202103211520">
+      <category name="N7 Xtext PDL 2"/>
    </feature>
    <category-def name="N7 exemple" label="N7 exemple"/>
    <category-def name="N7 GLS Feature" label="N7 GLS Feature"/>
+   <category-def name="N7 Xtext PDL1" label="N7 Xtext PDL1"/>
+   <category-def name="N7 Xtext PDL 2" label="N7 Xtext PDL 2"/>
 </site>

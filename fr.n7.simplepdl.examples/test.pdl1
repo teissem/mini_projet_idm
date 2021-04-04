@@ -1,0 +1,24 @@
+process ex1 {
+	wd Conception
+	wd RedactionDoc
+	wd Programmation
+	wd RedactionTests
+	re Concepteur 3
+	re Developpeur 2
+	re Machine 4
+	re Redacteur 1
+	re Testeur 2
+	ws s2s from Conception to RedactionTests
+	ws f2s from Conception to Programmation
+	ws f2f from Programmation to RedactionTests
+	ws s2s from Conception to RedactionDoc
+	ws f2f from Conception to RedactionDoc
+	ren Conception need 2 Concepteur
+	ren Conception need 2 Machine
+	ren RedactionDoc need 1 Machine
+	ren RedactionDoc need 1 Redacteur
+	ren Programmation need 2 Developpeur
+	ren Programmation need 2 Machine
+	ren RedactionTests need 2 Machine
+	ren RedactionTests need 1 Testeur
+}

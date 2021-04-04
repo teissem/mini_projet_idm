@@ -143,17 +143,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPlace_Possibilities() {
-		return (EReference)placeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPlace_Weight() {
-		return (EAttribute)placeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)placeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -170,17 +161,8 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTransition_Links() {
-		return (EReference)transitionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getTransition_Name() {
-		return (EAttribute)transitionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)transitionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -216,7 +198,7 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * @generated
 	 */
 	public EReference getLink_Transition() {
-		return (EReference)linkEClass.getEStructuralFeatures().get(2);
+		return (EReference)linkEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -225,7 +207,7 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 	 * @generated
 	 */
 	public EReference getLink_Place() {
-		return (EReference)linkEClass.getEStructuralFeatures().get(3);
+		return (EReference)linkEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -294,18 +276,16 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 		// Create classes and their features
 		placeEClass = createEClass(PLACE);
 		createEAttribute(placeEClass, PLACE__NAME);
-		createEReference(placeEClass, PLACE__POSSIBILITIES);
 		createEAttribute(placeEClass, PLACE__WEIGHT);
 
 		transitionEClass = createEClass(TRANSITION);
-		createEReference(transitionEClass, TRANSITION__LINKS);
 		createEAttribute(transitionEClass, TRANSITION__NAME);
 
 		linkEClass = createEClass(LINK);
 		createEAttribute(linkEClass, LINK__WEIGHT);
 		createEAttribute(linkEClass, LINK__POSITIVE);
-		createEReference(linkEClass, LINK__TRANSITION);
 		createEReference(linkEClass, LINK__PLACE);
+		createEReference(linkEClass, LINK__TRANSITION);
 
 		petriEClass = createEClass(PETRI);
 		createEReference(petriEClass, PETRI__PETRI_ELEMENTS);
@@ -349,18 +329,16 @@ public class PetrinetPackageImpl extends EPackageImpl implements PetrinetPackage
 		// Initialize classes, features, and operations; add parameters
 		initEClass(placeEClass, Place.class, "Place", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPlace_Name(), ecorePackage.getEString(), "name", null, 1, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPlace_Possibilities(), this.getLink(), null, "possibilities", null, 0, -1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPlace_Weight(), ecorePackage.getEInt(), "weight", null, 1, 1, Place.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTransition_Links(), this.getLink(), null, "links", null, 0, -1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTransition_Name(), ecorePackage.getEString(), "name", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLink_Weight(), ecorePackage.getEInt(), "weight", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLink_Positive(), ecorePackage.getEBoolean(), "positive", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLink_Transition(), this.getTransition(), null, "transition", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLink_Place(), this.getPlace(), null, "place", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_Place(), this.getPlace(), null, "place", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLink_Transition(), this.getTransition(), null, "transition", null, 1, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(petriEClass, Petri.class, "Petri", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPetri_PetriElements(), this.getPetriElement(), null, "petriElements", null, 0, -1, Petri.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -104,22 +104,13 @@ public interface PetrinetPackage extends EPackage {
 	int PLACE__NAME = PETRI_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Possibilities</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PLACE__POSSIBILITIES = PETRI_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Weight</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE__WEIGHT = PETRI_ELEMENT_FEATURE_COUNT + 2;
+	int PLACE__WEIGHT = PETRI_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Place</em>' class.
@@ -128,7 +119,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PLACE_FEATURE_COUNT = PETRI_ELEMENT_FEATURE_COUNT + 3;
+	int PLACE_FEATURE_COUNT = PETRI_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Place</em>' class.
@@ -150,22 +141,13 @@ public interface PetrinetPackage extends EPackage {
 	int TRANSITION = 1;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TRANSITION__LINKS = PETRI_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION__NAME = PETRI_ELEMENT_FEATURE_COUNT + 1;
+	int TRANSITION__NAME = PETRI_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
@@ -174,7 +156,7 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = PETRI_ELEMENT_FEATURE_COUNT + 2;
+	int TRANSITION_FEATURE_COUNT = PETRI_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -214,22 +196,22 @@ public interface PetrinetPackage extends EPackage {
 	int LINK__POSITIVE = PETRI_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Transition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Place</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__TRANSITION = PETRI_ELEMENT_FEATURE_COUNT + 2;
+	int LINK__PLACE = PETRI_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Place</b></em>' containment reference.
+	 * The feature id for the '<em><b>Transition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__PLACE = PETRI_ELEMENT_FEATURE_COUNT + 3;
+	int LINK__TRANSITION = PETRI_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>Link</em>' class.
@@ -318,17 +300,6 @@ public interface PetrinetPackage extends EPackage {
 	EAttribute getPlace_Name();
 
 	/**
-	 * Returns the meta object for the reference list '{@link petrinet.Place#getPossibilities <em>Possibilities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Possibilities</em>'.
-	 * @see petrinet.Place#getPossibilities()
-	 * @see #getPlace()
-	 * @generated
-	 */
-	EReference getPlace_Possibilities();
-
-	/**
 	 * Returns the meta object for the attribute '{@link petrinet.Place#getWeight <em>Weight</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,17 +319,6 @@ public interface PetrinetPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTransition();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link petrinet.Transition#getLinks <em>Links</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Links</em>'.
-	 * @see petrinet.Transition#getLinks()
-	 * @see #getTransition()
-	 * @generated
-	 */
-	EReference getTransition_Links();
 
 	/**
 	 * Returns the meta object for the attribute '{@link petrinet.Transition#getName <em>Name</em>}'.
@@ -404,10 +364,10 @@ public interface PetrinetPackage extends EPackage {
 	EAttribute getLink_Positive();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link petrinet.Link#getTransition <em>Transition</em>}'.
+	 * Returns the meta object for the reference '{@link petrinet.Link#getTransition <em>Transition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Transition</em>'.
+	 * @return the meta object for the reference '<em>Transition</em>'.
 	 * @see petrinet.Link#getTransition()
 	 * @see #getLink()
 	 * @generated
@@ -415,10 +375,10 @@ public interface PetrinetPackage extends EPackage {
 	EReference getLink_Transition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link petrinet.Link#getPlace <em>Place</em>}'.
+	 * Returns the meta object for the reference '{@link petrinet.Link#getPlace <em>Place</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Place</em>'.
+	 * @return the meta object for the reference '<em>Place</em>'.
 	 * @see petrinet.Link#getPlace()
 	 * @see #getLink()
 	 * @generated
@@ -509,14 +469,6 @@ public interface PetrinetPackage extends EPackage {
 		EAttribute PLACE__NAME = eINSTANCE.getPlace_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Possibilities</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PLACE__POSSIBILITIES = eINSTANCE.getPlace_Possibilities();
-
-		/**
 		 * The meta object literal for the '<em><b>Weight</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -533,14 +485,6 @@ public interface PetrinetPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRANSITION = eINSTANCE.getTransition();
-
-		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TRANSITION__LINKS = eINSTANCE.getTransition_Links();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -577,7 +521,7 @@ public interface PetrinetPackage extends EPackage {
 		EAttribute LINK__POSITIVE = eINSTANCE.getLink_Positive();
 
 		/**
-		 * The meta object literal for the '<em><b>Transition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Transition</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -585,7 +529,7 @@ public interface PetrinetPackage extends EPackage {
 		EReference LINK__TRANSITION = eINSTANCE.getLink_Transition();
 
 		/**
-		 * The meta object literal for the '<em><b>Place</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Place</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -1,8 +1,8 @@
-#Thu Mar 18 15:32:29 CET 2021
+#Sun Apr 04 10:25:05 CEST 2021
 rulergrid.rulerunit=1
 print.margin.left=0.5
 rulergrid.gridlinestyle=6
-zoom=0.75
+zoom=1.0
 print.useMillim=true
 print.usePortrait=true
 print.page.height=11.6929134

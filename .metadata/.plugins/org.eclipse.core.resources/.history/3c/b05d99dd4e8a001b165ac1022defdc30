@@ -1,0 +1,9 @@
+process exemple{
+	wd a1 {}
+	wd a2 { starts if a1 finished}
+	note "Ma note"
+	re Concepteur {
+		Quantity 3
+		a1 need 2 to start
+	}
+}

@@ -14,8 +14,8 @@ package petrinet;
  * <ul>
  *   <li>{@link petrinet.Link#getWeight <em>Weight</em>}</li>
  *   <li>{@link petrinet.Link#isPositive <em>Positive</em>}</li>
- *   <li>{@link petrinet.Link#getTransition <em>Transition</em>}</li>
  *   <li>{@link petrinet.Link#getPlace <em>Place</em>}</li>
+ *   <li>{@link petrinet.Link#getTransition <em>Transition</em>}</li>
  * </ul>
  *
  * @see petrinet.PetrinetPackage#getLink()
@@ -68,44 +68,44 @@ public interface Link extends PetriElement {
 	void setPositive(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Transition</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Transition</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Transition</em>' containment reference.
+	 * @return the value of the '<em>Transition</em>' reference.
 	 * @see #setTransition(Transition)
 	 * @see petrinet.PetrinetPackage#getLink_Transition()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Transition getTransition();
 
 	/**
-	 * Sets the value of the '{@link petrinet.Link#getTransition <em>Transition</em>}' containment reference.
+	 * Sets the value of the '{@link petrinet.Link#getTransition <em>Transition</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Transition</em>' containment reference.
+	 * @param value the new value of the '<em>Transition</em>' reference.
 	 * @see #getTransition()
 	 * @generated
 	 */
 	void setTransition(Transition value);
 
 	/**
-	 * Returns the value of the '<em><b>Place</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Place</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Place</em>' containment reference.
+	 * @return the value of the '<em>Place</em>' reference.
 	 * @see #setPlace(Place)
 	 * @see petrinet.PetrinetPackage#getLink_Place()
-	 * @model containment="true" required="true"
+	 * @model required="true"
 	 * @generated
 	 */
 	Place getPlace();
 
 	/**
-	 * Sets the value of the '{@link petrinet.Link#getPlace <em>Place</em>}' containment reference.
+	 * Sets the value of the '{@link petrinet.Link#getPlace <em>Place</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Place</em>' containment reference.
+	 * @param value the new value of the '<em>Place</em>' reference.
 	 * @see #getPlace()
 	 * @generated
 	 */

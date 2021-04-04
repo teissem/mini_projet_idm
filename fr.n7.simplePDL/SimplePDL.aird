@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
-  <viewpoint:DAnalysis uid="_zsZccIfsEeuhtes3-UYueg" selectedViews="_z8H6gIfsEeuhtes3-UYueg _z8ZAQIfsEeuhtes3-UYueg _z8aOYIfsEeuhtes3-UYueg _z8ef0IfsEeuhtes3-UYueg" version="14.3.1.202003261200">
+  <viewpoint:DAnalysis uid="_zsZccIfsEeuhtes3-UYueg" selectedViews="_z8ZAQIfsEeuhtes3-UYueg _z8ef0IfsEeuhtes3-UYueg _z8H6gIfsEeuhtes3-UYueg _z8aOYIfsEeuhtes3-UYueg" version="14.3.1.202003261200">
     <semanticResources>SimplePDL.ecore</semanticResources>
+    <semanticResources>Process.xmi</semanticResources>
+    <semanticResources>SimplePDL.genmodel</semanticResources>
+    <semanticResources>SimplePDL.ocl</semanticResources>
+    <semanticResources>SimplePDL.ocl.oclas</semanticResources>
+    <semanticResources>SimplePDL.ecore.oclas</semanticResources>
+    <semanticResources>http://www.eclipse.org/ocl/2015/Orphanage.oclas</semanticResources>
+    <semanticResources>http://www.eclipse.org/emf/2002/Ecore.oclas</semanticResources>
+    <semanticResources>models/SimplePDLCreator_Created_Process.xmi</semanticResources>
+    <semanticResources>process1-ko.xmi</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_z8H6gIfsEeuhtes3-UYueg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_2TYs0IfsEeuhtes3-UYueg" name="simplepdl class diagram" repPath="#_2SzeAIfsEeuhtes3-UYueg" changeId="3633f206-e5dc-4b63-b0a2-f4e935b570b7">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_2TYs0IfsEeuhtes3-UYueg" name="simplepdl class diagram" repPath="#_2SzeAIfsEeuhtes3-UYueg" changeId="e811c898-c772-47d9-acb6-1bd4e962ee73">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="SimplePDL.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -45,7 +54,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_3WE44ofsEeuhtes3-UYueg"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_3WCcoYfsEeuhtes3-UYueg" fontName="Ubuntu" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3WCcoofsEeuhtes3-UYueg" x="80" y="41"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3WCcoofsEeuhtes3-UYueg" x="435" y="38"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_3WFf8IfsEeuhtes3-UYueg" type="2003" element="_3VXuQIfsEeuhtes3-UYueg">
           <children xmi:type="notation:Node" xmi:id="_3WGHAIfsEeuhtes3-UYueg" type="5007"/>

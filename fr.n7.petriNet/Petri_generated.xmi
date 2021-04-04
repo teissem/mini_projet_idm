@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:petrinnet="http://petrinet">
+  <petrinnet:Petri name="ExampleProcess"/>
+  <petrinnet:Place name="FirstTask_begin" weight="1"/>
+  <petrinnet:Transition name="FirstTask_start"/>
+  <petrinnet:Place name="FirstTask_idle"/>
+  <petrinnet:Transition name="FirstTask_finish"/>
+  <petrinnet:Place name="FirstTask_end"/>
+  <petrinnet:Place name="SecondTask_begin" weight="1"/>
+  <petrinnet:Transition name="SecondTask_start"/>
+  <petrinnet:Place name="SecondTask_idle"/>
+  <petrinnet:Transition name="SecondTask_finish"/>
+  <petrinnet:Place name="SecondTask_end"/>
+</xmi:XMI>

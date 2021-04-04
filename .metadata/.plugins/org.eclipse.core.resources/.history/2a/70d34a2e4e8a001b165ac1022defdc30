@@ -1,0 +1,10 @@
+process ex1 {
+	wd Conception
+	wd RédactionDoc
+	wd Programmation
+	re Concepteur 3
+	ws s2s from a to b
+	ws f2f from a to c
+	
+	ren a need 2 Concepteur
+}

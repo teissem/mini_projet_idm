@@ -1,0 +1,9 @@
+process ex1 {
+	wd a
+	wd b
+	wd c
+	ws s2s from a to b
+	ws f2f from a to c
+	re Concepteur 3
+	ren a need 2 Concepteur
+}

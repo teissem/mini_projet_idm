@@ -6,7 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="linksToPredecessors"/>
 		<list key="findhistory">
+			<item value="linksToPredecessors"/>
+			<item value="getWDs"/>
 			<item value="    &#x09;&#x09;&#x09;Link"/>
 		</list>
 		<list key="replacehistory">

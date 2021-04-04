@@ -4,7 +4,6 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:simplepdl="http://simplepdl"
-    xsi:schemaLocation="http://simplepdl SimplePDL.ecore"
     name="ExampleProcess">
   <processElements
       xsi:type="simplepdl:WorkDefinition"
@@ -18,4 +17,8 @@
       xsi:type="simplepdl:WorkSequence"
       predecessor="//@processElements.0"
       successor="//@processElements.1"/>
+  <processElements
+      xsi:type="simplepdl:Guidance"
+      text="A Guidance !"
+      guidances="//@processElements.0"/>
 </simplepdl:Process>

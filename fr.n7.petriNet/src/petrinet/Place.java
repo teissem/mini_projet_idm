@@ -2,8 +2,6 @@
  */
 package petrinet;
 
-import org.eclipse.emf.common.util.EList;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Place</b></em>'.
@@ -14,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link petrinet.Place#getName <em>Name</em>}</li>
- *   <li>{@link petrinet.Place#getPossibilities <em>Possibilities</em>}</li>
  *   <li>{@link petrinet.Place#getWeight <em>Weight</em>}</li>
  * </ul>
  *
@@ -44,18 +41,6 @@ public interface Place extends PetriElement {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Possibilities</b></em>' reference list.
-	 * The list contents are of type {@link petrinet.Link}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Possibilities</em>' reference list.
-	 * @see petrinet.PetrinetPackage#getPlace_Possibilities()
-	 * @model
-	 * @generated
-	 */
-	EList<Link> getPossibilities();
 
 	/**
 	 * Returns the value of the '<em><b>Weight</b></em>' attribute.

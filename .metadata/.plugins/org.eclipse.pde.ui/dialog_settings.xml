@@ -24,8 +24,8 @@
 	</section>
 	<section name="FeatureExportWizard">
 		<item key="exportType" value="1"/>
-		<item key="destination0" value="/home/n7student/Documents/update_site_arborescent"/>
-		<item key="destination1" value="/home/n7student/Documents/update_site_arborescent"/>
+		<item key="destination0" value="/home/n7student/Documents/update_site_xtext2"/>
+		<item key="destination1" value="/home/n7student/Documents/update_site_xtext2"/>
 		<item key="exportUpdate" value="true"/>
 		<item key="exportSource" value="false"/>
 		<item key="exportSourceFormat" value="Generate source bundles"/>
@@ -41,8 +41,24 @@
 		<item key="jnlp" value="false"/>
 		<item key="siteURL" value=""/>
 		<item key="jre" value=""/>
-		<item key="destination2" value="/home/n7student/Documents/update_site"/>
+		<item key="destination2" value="/home/n7student/Documents/update_site_xtext"/>
+		<item key="destination3" value="/home/n7student/Documents/update_site_arborescent"/>
+		<item key="destination4" value="/home/n7student/Documents/arborescent"/>
+		<item key="destination5" value="/home/n7student/Documents/update_site"/>
 	</section>
 	<section name="pluginsView">
+	</section>
+	<section name="targetStateView">
+	</section>
+	<section name="org.eclipse.pde.ui.dialogs.PluginSelectionDialog">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History/&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="721"/>
+			<item key="DIALOG_Y_ORIGIN" value="221"/>
+			<item key="DIALOG_FONT_NAME" value="1|Noto Sans|9.0|0|GTK|1|"/>
+		</section>
 	</section>
 </section>

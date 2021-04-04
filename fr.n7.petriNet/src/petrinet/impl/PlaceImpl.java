@@ -2,19 +2,10 @@
  */
 package petrinet.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
-import petrinet.Link;
 import petrinet.PetrinetPackage;
 import petrinet.Place;
 
@@ -27,7 +18,6 @@ import petrinet.Place;
  * </p>
  * <ul>
  *   <li>{@link petrinet.impl.PlaceImpl#getName <em>Name</em>}</li>
- *   <li>{@link petrinet.impl.PlaceImpl#getPossibilities <em>Possibilities</em>}</li>
  *   <li>{@link petrinet.impl.PlaceImpl#getWeight <em>Weight</em>}</li>
  * </ul>
  *
@@ -53,16 +43,6 @@ public class PlaceImpl extends PetriElementImpl implements Place {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPossibilities() <em>Possibilities</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPossibilities()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Link> possibilities;
 
 	/**
 	 * The default value of the '{@link #getWeight() <em>Weight</em>}' attribute.
@@ -129,18 +109,6 @@ public class PlaceImpl extends PetriElementImpl implements Place {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Link> getPossibilities() {
-		if (possibilities == null) {
-			possibilities = new EObjectResolvingEList<Link>(Link.class, this, PetrinetPackage.PLACE__POSSIBILITIES);
-		}
-		return possibilities;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public int getWeight() {
 		return weight;
 	}
@@ -167,8 +135,6 @@ public class PlaceImpl extends PetriElementImpl implements Place {
 		switch (featureID) {
 			case PetrinetPackage.PLACE__NAME:
 				return getName();
-			case PetrinetPackage.PLACE__POSSIBILITIES:
-				return getPossibilities();
 			case PetrinetPackage.PLACE__WEIGHT:
 				return getWeight();
 		}
@@ -186,10 +152,6 @@ public class PlaceImpl extends PetriElementImpl implements Place {
 		switch (featureID) {
 			case PetrinetPackage.PLACE__NAME:
 				setName((String)newValue);
-				return;
-			case PetrinetPackage.PLACE__POSSIBILITIES:
-				getPossibilities().clear();
-				getPossibilities().addAll((Collection<? extends Link>)newValue);
 				return;
 			case PetrinetPackage.PLACE__WEIGHT:
 				setWeight((Integer)newValue);
@@ -209,9 +171,6 @@ public class PlaceImpl extends PetriElementImpl implements Place {
 			case PetrinetPackage.PLACE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case PetrinetPackage.PLACE__POSSIBILITIES:
-				getPossibilities().clear();
-				return;
 			case PetrinetPackage.PLACE__WEIGHT:
 				setWeight(WEIGHT_EDEFAULT);
 				return;
@@ -229,8 +188,6 @@ public class PlaceImpl extends PetriElementImpl implements Place {
 		switch (featureID) {
 			case PetrinetPackage.PLACE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case PetrinetPackage.PLACE__POSSIBILITIES:
-				return possibilities != null && !possibilities.isEmpty();
 			case PetrinetPackage.PLACE__WEIGHT:
 				return weight != WEIGHT_EDEFAULT;
 		}

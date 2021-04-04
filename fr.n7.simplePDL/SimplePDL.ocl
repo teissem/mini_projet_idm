@@ -47,6 +47,10 @@ inv twoCharRessources('Le nom d\'une ressource doit contenir au moins deux carac
 inv notNegativeRessources('La quantite d\'une ressource ne peut pas être négative'):
 	self.quantity >= 0
 	
+context RessourceNeeded
+inv notNegativeRessourceNeeded('Le nombre de ressource necessaire ne peut pas être négatif'):
+	self.quantity >= 0
+	
 -- Deux ressources ne peuvent pas avoir le même nom mais cette condition est assuré par 
 -- l'invariant notSameName
 

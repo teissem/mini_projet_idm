@@ -3,8 +3,6 @@
 package petrinet.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -25,8 +23,8 @@ import petrinet.Transition;
  * <ul>
  *   <li>{@link petrinet.impl.LinkImpl#getWeight <em>Weight</em>}</li>
  *   <li>{@link petrinet.impl.LinkImpl#isPositive <em>Positive</em>}</li>
- *   <li>{@link petrinet.impl.LinkImpl#getTransition <em>Transition</em>}</li>
  *   <li>{@link petrinet.impl.LinkImpl#getPlace <em>Place</em>}</li>
+ *   <li>{@link petrinet.impl.LinkImpl#getTransition <em>Transition</em>}</li>
  * </ul>
  *
  * @generated
@@ -73,17 +71,7 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	protected boolean positive = POSITIVE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTransition() <em>Transition</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTransition()
-	 * @generated
-	 * @ordered
-	 */
-	protected Transition transition;
-
-	/**
-	 * The cached value of the '{@link #getPlace() <em>Place</em>}' containment reference.
+	 * The cached value of the '{@link #getPlace() <em>Place</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getPlace()
@@ -91,6 +79,16 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	 * @ordered
 	 */
 	protected Place place;
+
+	/**
+	 * The cached value of the '{@link #getTransition() <em>Transition</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTransition()
+	 * @generated
+	 * @ordered
+	 */
+	protected Transition transition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,6 +157,14 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	 * @generated
 	 */
 	public Transition getTransition() {
+		if (transition != null && transition.eIsProxy()) {
+			InternalEObject oldTransition = (InternalEObject)transition;
+			transition = (Transition)eResolveProxy(oldTransition);
+			if (transition != oldTransition) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PetrinetPackage.LINK__TRANSITION, oldTransition, transition));
+			}
+		}
 		return transition;
 	}
 
@@ -167,14 +173,8 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTransition(Transition newTransition, NotificationChain msgs) {
-		Transition oldTransition = transition;
-		transition = newTransition;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PetrinetPackage.LINK__TRANSITION, oldTransition, newTransition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public Transition basicGetTransition() {
+		return transition;
 	}
 
 	/**
@@ -183,17 +183,10 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	 * @generated
 	 */
 	public void setTransition(Transition newTransition) {
-		if (newTransition != transition) {
-			NotificationChain msgs = null;
-			if (transition != null)
-				msgs = ((InternalEObject)transition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PetrinetPackage.LINK__TRANSITION, null, msgs);
-			if (newTransition != null)
-				msgs = ((InternalEObject)newTransition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PetrinetPackage.LINK__TRANSITION, null, msgs);
-			msgs = basicSetTransition(newTransition, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.LINK__TRANSITION, newTransition, newTransition));
+		Transition oldTransition = transition;
+		transition = newTransition;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.LINK__TRANSITION, oldTransition, transition));
 	}
 
 	/**
@@ -202,6 +195,14 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	 * @generated
 	 */
 	public Place getPlace() {
+		if (place != null && place.eIsProxy()) {
+			InternalEObject oldPlace = (InternalEObject)place;
+			place = (Place)eResolveProxy(oldPlace);
+			if (place != oldPlace) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, PetrinetPackage.LINK__PLACE, oldPlace, place));
+			}
+		}
 		return place;
 	}
 
@@ -210,14 +211,8 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetPlace(Place newPlace, NotificationChain msgs) {
-		Place oldPlace = place;
-		place = newPlace;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PetrinetPackage.LINK__PLACE, oldPlace, newPlace);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+	public Place basicGetPlace() {
+		return place;
 	}
 
 	/**
@@ -226,33 +221,10 @@ public class LinkImpl extends PetriElementImpl implements Link {
 	 * @generated
 	 */
 	public void setPlace(Place newPlace) {
-		if (newPlace != place) {
-			NotificationChain msgs = null;
-			if (place != null)
-				msgs = ((InternalEObject)place).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PetrinetPackage.LINK__PLACE, null, msgs);
-			if (newPlace != null)
-				msgs = ((InternalEObject)newPlace).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PetrinetPackage.LINK__PLACE, null, msgs);
-			msgs = basicSetPlace(newPlace, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.LINK__PLACE, newPlace, newPlace));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case PetrinetPackage.LINK__TRANSITION:
-				return basicSetTransition(null, msgs);
-			case PetrinetPackage.LINK__PLACE:
-				return basicSetPlace(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+		Place oldPlace = place;
+		place = newPlace;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PetrinetPackage.LINK__PLACE, oldPlace, place));
 	}
 
 	/**
@@ -267,10 +239,12 @@ public class LinkImpl extends PetriElementImpl implements Link {
 				return getWeight();
 			case PetrinetPackage.LINK__POSITIVE:
 				return isPositive();
-			case PetrinetPackage.LINK__TRANSITION:
-				return getTransition();
 			case PetrinetPackage.LINK__PLACE:
-				return getPlace();
+				if (resolve) return getPlace();
+				return basicGetPlace();
+			case PetrinetPackage.LINK__TRANSITION:
+				if (resolve) return getTransition();
+				return basicGetTransition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -289,11 +263,11 @@ public class LinkImpl extends PetriElementImpl implements Link {
 			case PetrinetPackage.LINK__POSITIVE:
 				setPositive((Boolean)newValue);
 				return;
-			case PetrinetPackage.LINK__TRANSITION:
-				setTransition((Transition)newValue);
-				return;
 			case PetrinetPackage.LINK__PLACE:
 				setPlace((Place)newValue);
+				return;
+			case PetrinetPackage.LINK__TRANSITION:
+				setTransition((Transition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -313,11 +287,11 @@ public class LinkImpl extends PetriElementImpl implements Link {
 			case PetrinetPackage.LINK__POSITIVE:
 				setPositive(POSITIVE_EDEFAULT);
 				return;
-			case PetrinetPackage.LINK__TRANSITION:
-				setTransition((Transition)null);
-				return;
 			case PetrinetPackage.LINK__PLACE:
 				setPlace((Place)null);
+				return;
+			case PetrinetPackage.LINK__TRANSITION:
+				setTransition((Transition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -335,10 +309,10 @@ public class LinkImpl extends PetriElementImpl implements Link {
 				return weight != WEIGHT_EDEFAULT;
 			case PetrinetPackage.LINK__POSITIVE:
 				return positive != POSITIVE_EDEFAULT;
-			case PetrinetPackage.LINK__TRANSITION:
-				return transition != null;
 			case PetrinetPackage.LINK__PLACE:
 				return place != null;
+			case PetrinetPackage.LINK__TRANSITION:
+				return transition != null;
 		}
 		return super.eIsSet(featureID);
 	}
